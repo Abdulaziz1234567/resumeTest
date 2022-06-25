@@ -18,7 +18,6 @@ const btn = document.querySelector(".w-icon-nav-menu"),
 //     closeModal();
 //   }
 // });
-
 $(".w-icon-nav-menu").click(function () {
   $(".w-nav-menu").css({
     display: "block",
@@ -29,25 +28,20 @@ $(".w-icon-nav-menu").click(function () {
     opacity: "0",
   });
 });
-$(".nav-link-2.mobile").click(function () {
-  $(".w-nav-menu").css({
-    display: "block",
-    transform: "translateX(-100%) translateY(0px)",
-    transition: "transform 600ms ease 0s",
+if (screen.width < 960) {
+  $(".nav-link-2.mobile").click(function () {
+    $(".w-nav-menu").css({
+      display: "block",
+      transform: "translateX(-100%) translateY(0px)",
+      transition: "transform 600ms ease 0s",
+    });
+    $(".w-icon-nav-menu").css({
+      opacity: "1",
+    });
   });
-  $(".w-icon-nav-menu").css({
-    opacity: "1",
-  });
-});
-
-const menuBtn = document.querySelector(".w-icon-nav-menu");
-const menuList = document.querySelector(".w-nav-menu");
-menuBtn.addEventListener("click", () => {
-  menuList.classList.add = ".show";
-  // menuList.classList.add("show");
-  //   menuList.style.display = "block";
-  //   document.body.style.overflow = "";
-});
+} else {
+  console.log("More than 960");
+}
 
 // menuBtn.addEventListener("click", showModal);
 
